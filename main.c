@@ -4,23 +4,26 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	char op;
-	int x, y;
-	int result;
+	int answer = 59;
+	int x;
+	int trial=0;
 	
-	printf("enter the calculation: ");
-    scanf("%d %c %d", &x, &op, &y);	
+	do
+	{
+		printf("Guess a number: ");
+		scanf("%d", &x);
+		trial++;
+		
+	    if (x>59)
+		    printf("high!\n");
+		if (x<59)
+		    printf("low!\n");	 
+		
+	}
+	while( x!= answer );
+	
+	
+    printf("Congratulation! Number of trial = %i ",trial);
     
-    //연산자에 따라 결과값을 계산 (result에 저장) 
-    if (op=='+') 
-        result=x+y;
-    else if (op=='-')
-        result=x-y;
-    else if (op=='*')
-        result=x*y;
-    else
-       result=x/y;
-    
-    printf("= %i ",result);
 	return 0;
 }
