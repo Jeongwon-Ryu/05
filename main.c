@@ -9,12 +9,9 @@ int main(int argc, char *argv[]) {
 	scanf("%d", &x);
 	
 	
-	if (x>0)
-	    printf("양수입니다");
-	else if (x==0)
-	    printf("0 입니다");
-	else
-	    printf("음수입니다."); 
+	if (x<0)
+	   x=-1*x; 
+	printf("절댓값은 %i 입니다.",x);
 	 
 	return 0;
 }
