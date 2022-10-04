@@ -4,17 +4,23 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int sum = 0;
-	int x;
-	int i;
+	char op;
+	int x, y;
+	int result;
 	
-	printf("input a number: ");
-    scanf("%d", &x);	
+	printf("enter the calculation: ");
+    scanf("%d %c %d", &x, &op, &y);	
     
-	//for 문을 활용해서 1부터 x 까지 sum에 더하는 코 
-    for(i=0; i<=x; i++) //반복
-	    sum = sum + i; //더하기 
-	
-	printf("the result is %i.", sum);
+    //연산자에 따라 결과값을 계산 (result에 저장) 
+    if (op=='+') 
+        result=x+y;
+    else if (op=='-')
+        result=x-y;
+    else if (op=='*')
+        result=x*y;
+    else
+       result=x/y;
+    
+    printf("= %i ",result);
 	return 0;
 }
